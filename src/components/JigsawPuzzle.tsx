@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import PuzzleBoard from './PuzzleBoard';
-import ImageUploader from './ImageUploader';
-import SuccessOverlay from './SuccessOverlay';
 import { Shuffle, RotateCcw, Puzzle } from 'lucide-react';
 
 // Default demo image
@@ -42,11 +40,11 @@ const JigsawPuzzle: React.FC = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="flex-shrink-0 px-4 py-4 sm:py-6 border-b border-border/50">
+      <header className="flex-shrink-0 px-4 py-4 sm:py-6">
         <div className="max-w-2xl mx-auto flex items-center justify-center gap-3">
           <Puzzle className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
           <h1 className="text-2xl sm:text-3xl font-semibold text-foreground">
-            Jigsaw Puzzle
+            Solve the puzzle See the Speaker
           </h1>
         </div>
       </header>
@@ -64,12 +62,15 @@ const JigsawPuzzle: React.FC = () => {
           />
         </div>
 
+        {/* Success message */}
+        {isComplete && (
+          <p className="text-lg font-medium text-success text-center animate-fade-in">
+            🎉 Puzzle Solved!
+          </p>
+        )}
+
         {/* Controls */}
         <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          <ImageUploader
-            onImageSelect={handleImageSelect}
-            hasImage={imageUrl !== DEFAULT_IMAGE}
-          />
           <button
             onClick={handleShuffle}
             className="btn-puzzle"
@@ -91,13 +92,11 @@ const JigsawPuzzle: React.FC = () => {
         {/* Instructions */}
         {!hasStarted && (
           <p className="text-sm text-muted-foreground text-center max-w-sm animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Drag pieces to connect them. They'll snap together when aligned correctly!
+            Solve the puzzle to reveal the face of the speaker.
           </p>
         )}
       </main>
 
-      {/* Success overlay */}
-      <SuccessOverlay show={isComplete} />
     </div>
   );
 };

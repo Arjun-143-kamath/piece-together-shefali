@@ -145,14 +145,6 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
             preserveAspectRatio="xMidYMid slice"
           />
         </g>
-        {!disabled && (
-          <path
-            d={path}
-            fill="none"
-            stroke="hsl(var(--foreground) / 0.15)"
-            strokeWidth="1"
-          />
-        )}
       </svg>
     </div>
   );
