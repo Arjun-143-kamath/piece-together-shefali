@@ -21,7 +21,7 @@ interface PieceState {
   zIndex: number;
 }
 
-const SNAP_THRESHOLD = 30;
+const SNAP_THRESHOLD = 50;
 
 const PuzzleBoard: React.FC<PuzzleBoardProps> = ({
   imageUrl,
