@@ -3,7 +3,7 @@ import PuzzleBoard from './PuzzleBoard';
 import { Shuffle, RotateCcw, Puzzle } from 'lucide-react';
 
 // Default demo image
-const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=600&fit=crop';
+const DEFAULT_IMAGE = '/Sinhu.png';
 
 const JigsawPuzzle: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>(DEFAULT_IMAGE);
@@ -42,8 +42,7 @@ const JigsawPuzzle: React.FC = () => {
       {/* Header */}
       <header className="flex-shrink-0 px-4 py-4 sm:py-6">
         <div className="max-w-2xl mx-auto flex items-center justify-center gap-3">
-          <Puzzle className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-          <h1 className="text-2xl sm:text-3xl font-semibold text-foreground">
+          <h1 className="font-sans-serif text-2xl sm:text-3xl font-semibold text-foreground">
             Solve the puzzle See the Speaker
           </h1>
         </div>
@@ -78,14 +77,6 @@ const JigsawPuzzle: React.FC = () => {
           >
             <Shuffle className="w-4 h-4" />
             <span>Shuffle</span>
-          </button>
-          <button
-            onClick={handleReset}
-            className="btn-puzzle-secondary"
-            aria-label="Reset puzzle to solved state"
-          >
-            <RotateCcw className="w-4 h-4" />
-            <span>Reset</span>
           </button>
         </div>
 
