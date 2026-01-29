@@ -3,7 +3,7 @@ import PuzzleBoard from './PuzzleBoard';
 import { Shuffle, RotateCcw, Puzzle } from 'lucide-react';
 
 // Default demo image
-const DEFAULT_IMAGE = '/Sinhu.png';
+const DEFAULT_IMAGE = '/shefali blah.jpg';
 
 const JigsawPuzzle: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>(DEFAULT_IMAGE);
